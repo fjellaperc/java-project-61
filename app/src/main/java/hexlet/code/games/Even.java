@@ -22,7 +22,7 @@ public class Even {
                 break;
             } else if (questionNum % 2 != 0 && userAnswer.equals("yes")) { //Нечетное ошибка
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
-                System.out.println("Let's try again " + nameUser);
+                System.out.println("Let's try again, " + nameUser);
                 break;
             } else {
                 System.out.println("Wrong answer!!!");
