@@ -26,7 +26,7 @@ public class Prime {
                 System.out.println("Correct!");
             } else {
                 System.out.println("Wrong answer!!!");
-                System.out.println("Let's try again, " + nameUser);
+                System.out.println("Let's try again, " + nameUser + "!");
                 break;
             }
         }

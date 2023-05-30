@@ -26,11 +26,11 @@ public class GCD {
             try {
                 int userAnswer = scanner.nextInt();
                 if (userAnswer == firstNOD) {
-                    System.out.println("Correct");
+                    System.out.println("Correct!");
                 } else {
                     System.out.print("'" + userAnswer + "' is wrong answer ;(.");
                     System.out.println("Correct answer was '" + firstNOD + "'");
-                    System.out.println("Let's try again, " + nameUser);
+                    System.out.println("Let's try again, " + nameUser + "!");
                     break;
                 }
             } catch (InputMismatchException e) {
