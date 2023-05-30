@@ -18,7 +18,7 @@ public class Even {
                 System.out.println("Correct!");
             } else if (questionNum % 2 == 0 && userAnswer.equals("no")) {  //Четное ошибка
                 System.out.println("'no' is wrong answer ;(. Correct answer was 'yes'.");
-                System.out.println("Let's try again " + nameUser);
+                System.out.println("Let's try again, " + nameUser);
                 break;
             } else if (questionNum % 2 != 0 && userAnswer.equals("yes")) { //Нечетное ошибка
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
