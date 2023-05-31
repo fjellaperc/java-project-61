@@ -7,17 +7,20 @@ import java.util.Scanner;
 public class Calculate {
     public static String generate() {
         String[] array = {"+", "-", "*", "/"};
-        int indexArray = (int) (Math.random() * 3);
+        int topRangeLimit = 3;
+        int indexArray = (int) (Math.random() * topRangeLimit);
         return array[indexArray];
     }
     public static void calc() {
         String nameUser = Welcome.welcome();
         System.out.println("What is the result of the expression?");
+        int topRangeLimit = 20;
+        int lowRangeLimit = 1;
         double result = 0;
         int i;
         for (i = 0; i < 3; i++) {
-            double num1 = (int) (Math.random() * 20 + 1);
-            double num2 = (int) (Math.random() * 20 + 1);
+            double num1 = (int) (Math.random() * topRangeLimit + lowRangeLimit);
+            double num2 = (int) (Math.random() * topRangeLimit + lowRangeLimit);
             String firstNum = String.format("%.0f", num1);
             String secondNum = String.format("%.0f", num2);
             String convertStr = " ";
