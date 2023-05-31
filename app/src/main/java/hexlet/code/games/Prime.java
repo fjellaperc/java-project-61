@@ -18,7 +18,7 @@ public class Prime {
                     answer = "yes";
                 }
             }
-            System.out.println(num);
+            System.out.println("Question: " + num);
             Scanner scanner = new Scanner(System.in);
             System.out.println("Your answer: ");
             String userAnswer = scanner.next();
