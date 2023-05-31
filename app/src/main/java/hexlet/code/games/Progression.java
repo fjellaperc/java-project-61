@@ -19,7 +19,7 @@ public class Progression {
             String[] numbers = new String[count];
             String[] compareNumbers = new String[count];
             int currentElement = (int) (Math.random() * topRangeBegin + 1); //Первый элемент прогрессии (от 1 до 7)
-            int step = (int) (Math.random() * 4 + 1); //Шаг прогрессии (от 1 до 4)
+            int step = (int) (Math.random() * topRangeStep + 1); //Шаг прогрессии (от 1 до 4)
             numbers[0] = Integer.toString(currentElement);
             compareNumbers[0] = Integer.toString(currentElement);
             for (int i = 1; i < numbers.length; i++) {  //Формируем массив

@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Calculate {
     public static String generate() {
         String[] array = {"+", "-", "*", "/"};
-        int topRangeLimit = 3;
+        final int topRangeLimit = 3;
         int indexArray = (int) (Math.random() * topRangeLimit);
         return array[indexArray];
     }
