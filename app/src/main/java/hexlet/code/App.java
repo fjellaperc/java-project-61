@@ -19,21 +19,27 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
+        int greet = 1;
+        int evenGame = 2;
+        int calcGame = 3;
+        int gcdGame = 4;
+        int progressGame = 5;
+        int primeGame = 6;
         Scanner scanner = new Scanner(System.in);
         try {
             int userInt = scanner.nextInt();
             System.out.println("Your choice: " + userInt);
-            if (userInt == 1) {
+            if (userInt == greet) {
                 Welcome.welcome();
-            } else if (userInt == 2) {
+            } else if (userInt == evenGame) {
                 Even.evenNum();
-            } else if (userInt == 3) {
+            } else if (userInt == calcGame) {
                 Calculate.calc();
-            } else if (userInt == 4) {
+            } else if (userInt == gcdGame) {
                 GCD.gcd();
-            } else if (userInt == 5) {
+            } else if (userInt == progressGame) {
                 Progression.progression();
-            } else if (userInt == 6) {
+            } else if (userInt == primeGame) {
                 Prime.prime();
             } else {
                 System.out.println("Please, enter correct option!!!");
