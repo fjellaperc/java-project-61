@@ -6,8 +6,11 @@ public class Even {
         String nameUser = Welcome.welcome();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int i;
-        for (i = 0; i < 3; i++) {
-            int questionNum = (int) (Math.random() * 100 + 1);
+        final int topRangeLimit = 100;
+        final int lowRangeLimit = 1;
+        final int countStep = 3;
+        for (i = 0; i < countStep; i++) {
+            int questionNum = (int) (Math.random() * topRangeLimit + lowRangeLimit);
             System.out.println("Question: " + questionNum);
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
@@ -30,7 +33,7 @@ public class Even {
                 break;
             }
         }
-        if (i == 3) {
+        if (i == countStep) {
             System.out.println("Congratulations, " + nameUser + "!");
         }
     }

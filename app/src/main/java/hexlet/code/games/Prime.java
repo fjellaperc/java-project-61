@@ -7,10 +7,14 @@ public class Prime {
         String nameUser = Welcome.welcome();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int j;
+        final int topRangeLimit = 98;
+        final int lowRangeLimit = 2;
+        final int countStep = 3;
+        final int maxLengthArray = 10;
         String answer = "yes";
-        for (j = 0; j < 3; j++) {
-            int num = (int) (Math.random() * 98 + 2);
-            for (int i = 2; i < 10; i++) {  //Проверка простоты путем деления на числа от 2 до 10
+        for (j = 0; j < countStep; j++) {
+            int num = (int) (Math.random() * topRangeLimit + lowRangeLimit);
+            for (int i = 2; i < maxLengthArray; i++) {  //Проверка простоты путем деления на числа от 2 до 10
                 if (num % i == 0) {
                     answer = "no";
                     break;
@@ -30,7 +34,7 @@ public class Prime {
                 break;
             }
         }
-        if (j == 3) {
+        if (j == countStep) {
             System.out.println("Congratulations, " + nameUser + "!");
         }
     }

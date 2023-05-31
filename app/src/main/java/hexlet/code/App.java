@@ -19,12 +19,12 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
-        int greet = 1;
-        int evenGame = 2;
-        int calcGame = 3;
-        int gcdGame = 4;
-        int progressGame = 5;
-        int primeGame = 6;
+        final int greet = 1;
+        final int evenGame = 2;
+        final int calcGame = 3;
+        final int gcdGame = 4;
+        final int progressGame = 5;
+        final int primeGame = 6;
         Scanner scanner = new Scanner(System.in);
         try {
             int userInt = scanner.nextInt();
@@ -41,8 +41,6 @@ public class App {
                 Progression.progression();
             } else if (userInt == primeGame) {
                 Prime.prime();
-            } else {
-                System.out.println("Please, enter correct option!!!");
             }
         } catch (InputMismatchException e) {
             System.out.println("Please, enter correct option!!!");

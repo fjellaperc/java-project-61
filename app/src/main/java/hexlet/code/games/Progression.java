@@ -8,13 +8,18 @@ public class Progression {
         String nameUser = Welcome.welcome();
         System.out.println("What number is missing in the progression?");
         int j; //Счетчик для количества итераций в игре
-        for (j = 0; j < 3; j++) {
-            int count = (int) (Math.random() * 5 + 5); //Длина массива
+        final int topRangeLimit = 5;  //Для задания мдлины массива
+        final int lowRangeLimit = 5; //Для задания длины массива
+        final int topRangeBegin = 6; //Для задания начального значения
+        final int topRangeStep = 4; //Для задания шага прогрессии
+        final int countStep = 3; //Количество раундов в игре
+        for (j = 0; j < countStep; j++) {
+            int count = (int) (Math.random() * topRangeLimit + lowRangeLimit); //Длина массива
             int emptyElement = (int) (Math.random() * (count - 1) + 1); //Позиция скрытого элемента
             String[] numbers = new String[count];
             String[] compareNumbers = new String[count];
-            int currentElement = (int) (Math.random() * 6 + 1); //Первый элемент прогрессии
-            int step = (int) (Math.random() * 4 + 1); //Шаг прогрессии
+            int currentElement = (int) (Math.random() * topRangeBegin + 1); //Первый элемент прогрессии (от 1 до 7)
+            int step = (int) (Math.random() * 4 + 1); //Шаг прогрессии (от 1 до 4)
             numbers[0] = Integer.toString(currentElement);
             compareNumbers[0] = Integer.toString(currentElement);
             for (int i = 1; i < numbers.length; i++) {  //Формируем массив
@@ -26,9 +31,9 @@ public class Progression {
                 }
                 compareNumbers[i] = Integer.toString(currentElement);
             }
-            String s = Arrays.toString(numbers).replace(",", "");
-            StringBuilder out = new StringBuilder(s); //массив в строку без запятых
-            out = out.deleteCharAt(0).deleteCharAt(out.length() - 1); // удаляем скобки
+            String s = Arrays.toString(numbers).replace(",", ""); //Удаляем запятые
+            StringBuilder out = new StringBuilder(s); //массив в стрингбилдер
+            out = out.deleteCharAt(0).deleteCharAt(out.length() - 1); // удаляем скобки []
             System.out.println("Question: " + out);  //Выводит вопрос
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
@@ -42,7 +47,7 @@ public class Progression {
                 break;
             }
         }
-        if (j == 3) {
+        if (j == countStep) {
             System.out.println("Congratulations, " + nameUser + "!");
         }
     }

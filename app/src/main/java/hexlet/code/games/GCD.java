@@ -9,9 +9,12 @@ public class GCD {
         System.out.println("Find the greatest common divisor of given numbers.");
         int firstNOD;
         int i;
-        for (i = 0; i < 3; i++) {
-            int num1 = (int) (Math.random() * 20 + 2);
-            int num2 = (int) (Math.random() * 20 + 2);
+        final int topRangeLimit = 20;
+        final int lowRangeLimit = 2;
+        final int countStep = 3;
+        for (i = 0; i < countStep; i++) {
+            int num1 = (int) (Math.random() * topRangeLimit + lowRangeLimit);
+            int num2 = (int) (Math.random() * topRangeLimit + lowRangeLimit);
             System.out.println("Question: " + num1 + " " + num2);
             if (num1 >= num2) {
                 firstNOD = num2;
@@ -38,7 +41,7 @@ public class GCD {
                 return;
             }
         }
-        if (i == 3) {
+        if (i == countStep) {
             System.out.println("Congratulations, " + nameUser + "!");
         }
     }
