@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Calculate {
     public static String generate() {
         String[] array = {"+", "-", "*", "/"};
-        int indexArray = (int) (Math.random() * 4);
+        int indexArray = (int) (Math.random() * 3);  //По проверке деление не нужно было поэтому ограничил диапазон от 0 до 2.
         return array[indexArray];
     }
     public static void calc() {
