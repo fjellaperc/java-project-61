@@ -14,7 +14,8 @@ public class Progression {
     }
 
     public static String[][] progression() {
-        String[][] arrays = new String[3][2];
+        final int strCount = 3;
+        String[][] arrays = new String[strCount][2];
         int j; //Счетчик для количества итераций в игре
         for (j = 0; j < COUNT_STEP; j++) {
             int count = (int) (Math.random() * TOP_RANGE_LIMIT + LOW_RANGE_LIMIT); //Длина массива

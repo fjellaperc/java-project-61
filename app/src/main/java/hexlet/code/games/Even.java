@@ -9,9 +9,10 @@ public class Even {
     }
 
     public static String[][] evenNum() {
+        final int strCount = 3;
         int i; //Строка
         int j = 0; //Столбец
-        String[][] arrays = new String[3][2];
+        String[][] arrays = new String[strCount][2];
         for (i = 0; i < arrays.length; i++) {
             int questionNum = (int) (Math.random() * TOP_RANGE_LIMIT + LOW_RANGE_LIMIT);
             if (questionNum % 2 == 0) { //Четное

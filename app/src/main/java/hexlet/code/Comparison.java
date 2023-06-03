@@ -33,17 +33,18 @@ public class Comparison {
         String nameUser = Welcome.welcome();
         System.out.println(rules);
         int currentIteration = 0;
+        final int columnCorrectAnswer = 3;
         for (String[] gamesDatum : gamesData) {
             System.out.println("Question: " + gamesDatum[0] + " " + gamesDatum[1] + " " + gamesDatum[2]);
             System.out.print("Your answer: ");
             Scanner scanner = new Scanner(System.in);
             String userAnswer = scanner.next();
-            if (userAnswer.equalsIgnoreCase(gamesDatum[3])) {
+            if (userAnswer.equalsIgnoreCase(gamesDatum[columnCorrectAnswer])) {
                 System.out.println("Correct!");
                 currentIteration++;
             } else {
                 System.out.print("'" + userAnswer + "' is wrong answer ;(. ");
-                System.out.println("Correct answer was '" + gamesDatum[3] + "'.");
+                System.out.println("Correct answer was '" + gamesDatum[columnCorrectAnswer] + "'.");
                 System.out.println("Let's try again, " + nameUser + "!");
                 break;
             }

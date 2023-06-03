@@ -24,7 +24,8 @@ public class Prime {
     }
     public static String[][] prime() {
         int j; //Счетчик для сравнения количества итерации
-        String[][] array = new String[3][2];
+        final int strCount = 3;
+        String[][] array = new String[strCount][2];
         for (j = 0; j < COUNT_STEP; j++) {
             int num = (int) (Math.random() * TOP_RANGE_LIMIT + LOW_RANGE_LIMIT);
             if (evklidAlg(num)) {

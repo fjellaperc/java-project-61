@@ -39,10 +39,12 @@ public class Calculate {
     }
 
     public static String[][] calc() {
+        final int strCount = 3;
+        final int columnCount = 4;
         int result;
         int i; //Строка
         int j = 0; //Столбец
-        String[][] arrays = new String[3][4];
+        String[][] arrays = new String[strCount][columnCount];
         for (i = 0; i < ALL_STEP; i++) {
             int num1 = generateNum();
             int num2 = generateNum();

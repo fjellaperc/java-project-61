@@ -26,8 +26,10 @@ public class GCD {
 
     public static String[][] gcd() {
         int firstNOD;
+        final int strCount = 3;
+        final int columnCount = 3;
         int j = 0; //Столбец
-        String[][] arrays = new String[3][3];
+        String[][] arrays = new String[strCount][columnCount];
         int i;
         for (i = 0; i < COUNT_STEP; i++) {
             int num1 = generateNum();
