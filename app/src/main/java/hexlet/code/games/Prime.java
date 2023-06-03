@@ -1,46 +1,40 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
-
 public class Prime {
-    public static void prime() {
-        String nameUser = Welcome.welcome();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        int j; //Счетчик для сравнения количества итераций
-        final int topRangeLimit = 12; //Верхняя граница от 2 до 100
-        final int lowRangeLimit = 2; //Нижняя граница
-        final int countStep = 3;
-        final int maxLengthArray = 10;
+    public static final int TOP_RANGE_LIMIT = 12; //Верхняя граница от 2 до 100
+    public static final int LOW_RANGE_LIMIT = 2; //Нижняя граница
+    public static final int COUNT_STEP = 3;
+    public static final int MAX_LENGTH_ARRAY = 10;
+
+    public static boolean evklidAlg(int num) {
         int countNod = 0;
-        String answer = "yes";
-        for (j = 0; j < countStep; j++) {
-            int num = (int) (Math.random() * topRangeLimit + lowRangeLimit);
-            countNod = 0; //Обнуляем счетчик НОД
-            for (int i = 2; i < maxLengthArray; i++) {  //Проверка простоты путем деления на числа от 2 до 9
-                if (num % i == 0) {
-                    countNod++;
-                    if (countNod >= 2) { //Если 2 НОД и больше выходим
-                        answer = "no";
-                        break;
-                    }
-                } else {
-                    answer = "yes";
+        for (int i = 2; i < MAX_LENGTH_ARRAY; i++) {  //Проверка простоты путем деления на числа от 2 до 9
+            if (num % i == 0) {
+                countNod++;
+                if (countNod >= 2) { //Если 2 НОД и больше выходим
+                    return false;
                 }
             }
-            System.out.println("Question: " + num);
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Your answer: ");
-            String userAnswer = scanner.next();
-            if (answer.equalsIgnoreCase(userAnswer)) {
-                System.out.println("Correct!");
+        }
+        return true;
+    }
+
+    public static String primeRules() {
+        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    }
+    public static String[][] prime() {
+        int j; //Счетчик для сравнения количества итерации
+        String[][] array = new String[3][2];
+        for (j = 0; j < COUNT_STEP; j++) {
+            int num = (int) (Math.random() * TOP_RANGE_LIMIT + LOW_RANGE_LIMIT);
+            if (evklidAlg(num)) {
+                array[j][0] = Integer.toString(num);
+                array[j][1] = "yes";
             } else {
-                System.out.println("Wrong answer!!!");
-                System.out.println("Let's try again, " + nameUser + "!");
-                break;
+                array[j][0] = Integer.toString(num);
+                array[j][1] = "no";
             }
         }
-        if (j == countStep) {
-            System.out.println("Congratulations, " + nameUser + "!");
-        }
+        return array;
     }
 }

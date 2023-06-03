@@ -32,15 +32,15 @@ public class App {
             if (userInt == greet) {
                 Welcome.welcome();
             } else if (userInt == evenGame) {
-                Even.evenNum();
+                Comparison.comparisonEven(Even.evenRules(), Even.evenNum());
             } else if (userInt == calcGame) {
-                Calculate.calc();
+                Comparison.comparisonCalc(Calculate.ruleCalc(), Calculate.calc());
             } else if (userInt == gcdGame) {
-                GCD.gcd();
+                Comparison.comparisonGcd(GCD.gcdRules(), GCD.gcd());
             } else if (userInt == progressGame) {
-                Progression.progression();
+                Comparison.comparisonProgression(Progression.progressionRules(), Progression.progression());
             } else if (userInt == primeGame) {
-                Prime.prime();
+                Comparison.comparisonPrime(Prime.primeRules(), Prime.prime());
             }
         } catch (InputMismatchException e) {
             System.out.println("Please, enter correct option!!!");

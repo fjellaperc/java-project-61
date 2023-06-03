@@ -1,48 +1,45 @@
 package hexlet.code.games;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class GCD {
-    public static void gcd() {
-        String nameUser = Welcome.welcome();
-        System.out.println("Find the greatest common divisor of given numbers.");
-        int firstNOD;
-        int i;
-        final int topRangeLimit = 20;
-        final int lowRangeLimit = 2;
-        final int countStep = 3;
-        for (i = 0; i < countStep; i++) {
-            int num1 = (int) (Math.random() * topRangeLimit + lowRangeLimit);
-            int num2 = (int) (Math.random() * topRangeLimit + lowRangeLimit);
-            System.out.println("Question: " + num1 + " " + num2);
-            if (num1 >= num2) {
-                firstNOD = num2;
+    public static final int TOP_RANGE_LIMIT = 5;
+    public static final int LOW_RANGE_LIMIT = 1;
+    public static final int COUNT_STEP = 3;
+
+    public static int generateNum() {
+        return (int) (Math.random() * TOP_RANGE_LIMIT + LOW_RANGE_LIMIT);
+    }
+
+    public static int findGcd(int firstNumber, int secondNumber) {
+        while (firstNumber != 0 && secondNumber != 0) {
+            if (firstNumber > secondNumber) {
+                firstNumber = firstNumber % secondNumber;
             } else {
-                firstNOD = num1;
-            }
-            while (num1 % firstNOD != 0 || num2 % firstNOD != 0) {
-                --firstNOD;
-            }
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Your answer: ");
-            try {
-                int userAnswer = scanner.nextInt();
-                if (userAnswer == firstNOD) {
-                    System.out.println("Correct!");
-                } else {
-                    System.out.print("'" + userAnswer + "' is wrong answer ;(.");
-                    System.out.println("Correct answer was '" + firstNOD + "'");
-                    System.out.println("Let's try again, " + nameUser + "!");
-                    break;
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Please enter correct type number!!!");
-                return;
+                secondNumber = secondNumber % firstNumber;
             }
         }
-        if (i == countStep) {
-            System.out.println("Congratulations, " + nameUser + "!");
+        return secondNumber + firstNumber;
+    }
+
+    public static String gcdRules() {
+        return "Find the greatest common divisor of given numbers.";
+    }
+
+    public static String[][] gcd() {
+        int firstNOD;
+        int j = 0; //Столбец
+        String[][] arrays = new String[3][3];
+        int i;
+        for (i = 0; i < COUNT_STEP; i++) {
+            int num1 = generateNum();
+            int num2 = generateNum();
+            firstNOD = findGcd(num1, num2);
+            arrays[i][j] = Integer.toString(num1);
+            j++;
+            arrays[i][j] = Integer.toString(num2);
+            j++;
+            arrays[i][j] = Integer.toString(firstNOD);
+            j = 0;
         }
+        return arrays;
     }
 }
