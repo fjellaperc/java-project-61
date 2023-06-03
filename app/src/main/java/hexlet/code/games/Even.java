@@ -5,7 +5,7 @@ public class Even {
     public static final int LOW_RANGE_LIMIT = 1;
 
     public static String evenRules() {
-        return "Answer 'yes' if the number is even, otherwise answer 'no'";
+        return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
     public static String[][] evenNum() {
