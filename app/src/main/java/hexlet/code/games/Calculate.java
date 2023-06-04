@@ -6,7 +6,7 @@ public class Calculate {
     public static final int LOW_RANGE_LIMIT = 1;
     public static final int ALL_STEP = 3;
 
-    public static String generate() {
+    public static String generateOperation() {
         String[] array = {"+", "-", "*"};
         int indexArray = (int) (Math.random() * ALL_OPERATION);
         return array[indexArray];
@@ -34,11 +34,11 @@ public class Calculate {
         return result;
     }
 
-    public static String ruleCalc() {
+    public static String ruleCalcShow() {
         return "What is the result of the expression?";
     }
 
-    public static String[][] calc() {
+    public static String[][] calculation() {
         final int strCount = 3;
         final int columnCount = 4;
         int result;
@@ -48,7 +48,7 @@ public class Calculate {
         for (i = 0; i < ALL_STEP; i++) {
             int num1 = generateNum();
             int num2 = generateNum();
-            String operation = generate();
+            String operation = generateOperation();
             //System.out.println("Question: " + num1 + " " + operation + " " + num2);
             result = calculate(num1, num2, operation);
             arrays[i][j] = Integer.toString(num1);  //Первое число

@@ -30,17 +30,17 @@ public class App {
             int userInt = scanner.nextInt();
             System.out.println("Your choice: " + userInt);
             if (userInt == greet) {
-                Welcome.welcome();
+                Welcome.sayHello();
             } else if (userInt == evenGame) {
-                Comparison.comparisonEven(Even.evenRules(), Even.evenNum());
+                Comparison.comparisonEven(Even.evenRulesShow(), Even.evenDefine());
             } else if (userInt == calcGame) {
-                Comparison.comparisonCalc(Calculate.ruleCalc(), Calculate.calc());
+                Comparison.comparisonCalc(Calculate.ruleCalcShow(), Calculate.calculation());
             } else if (userInt == gcdGame) {
-                Comparison.comparisonGcd(GCD.gcdRules(), GCD.gcd());
+                Comparison.comparisonGcd(GCD.gcdRulesShow(), GCD.gcdFound());
             } else if (userInt == progressGame) {
-                Comparison.comparisonProgression(Progression.progressionRules(), Progression.progression());
+                Comparison.comparisonProgression(Progression.progressionRulesShow(), Progression.defineProgression());
             } else if (userInt == primeGame) {
-                Comparison.comparisonPrime(Prime.primeRules(), Prime.prime());
+                Comparison.comparisonPrime(Prime.primeRulesShow(), Prime.primeDefine());
             }
         } catch (InputMismatchException e) {
             System.out.println("Please, enter correct option!!!");

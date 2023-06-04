@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Comparison {
     public static final int ALL_ITERATION = 3;
     public static void comparisonEven(String rules, String[][] gamesData) {
-        String nameUser = Welcome.welcome();
+        String nameUser = Welcome.sayHello();
         int currentIteration = 0;
         System.out.println(rules);
         for (String[] gamesDatum : gamesData) {
@@ -30,7 +30,7 @@ public class Comparison {
         }
     }
     public static void comparisonCalc(String rules, String[][] gamesData) {
-        String nameUser = Welcome.welcome();
+        String nameUser = Welcome.sayHello();
         System.out.println(rules);
         int currentIteration = 0;
         final int columnCorrectAnswer = 3;
@@ -54,7 +54,7 @@ public class Comparison {
         }
     }
     public static void comparisonGcd(String rules, String[][] gamesData) {
-        String nameUser = Welcome.welcome();
+        String nameUser = Welcome.sayHello();
         System.out.println(rules);
         int currenIteration = 0;
         for (String[] gamesDatum: gamesData) {
@@ -78,7 +78,7 @@ public class Comparison {
     }
 
     public static void comparisonProgression(String rules, String[][] gamesData) {
-        String nameUser = Welcome.welcome();
+        String nameUser = Welcome.sayHello();
         System.out.println(rules);
         int currentIteration = 0;
         for (String[] gamesDatum : gamesData) {
@@ -101,7 +101,7 @@ public class Comparison {
         }
     }
     public static void comparisonPrime(String rules, String[][] gamesData) {
-        String nameUser = Welcome.welcome();
+        String nameUser = Welcome.sayHello();
         int currentIteration = 0;
         System.out.println(rules);
         for (String[] gamesDatum: gamesData) {

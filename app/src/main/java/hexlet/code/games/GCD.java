@@ -20,11 +20,11 @@ public class GCD {
         return secondNumber + firstNumber;
     }
 
-    public static String gcdRules() {
+    public static String gcdRulesShow() {
         return "Find the greatest common divisor of given numbers.";
     }
 
-    public static String[][] gcd() {
+    public static String[][] gcdFound() {
         int firstNOD;
         final int strCount = 3;
         final int columnCount = 3;

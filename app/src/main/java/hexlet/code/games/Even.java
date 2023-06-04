@@ -4,11 +4,11 @@ public class Even {
     public static final int TOP_RANGE_LIMIT = 100;
     public static final int LOW_RANGE_LIMIT = 1;
 
-    public static String evenRules() {
+    public static String evenRulesShow() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    public static String[][] evenNum() {
+    public static String[][] evenDefine() {
         final int strCount = 3;
         int i; //Строка
         int j = 0; //Столбец

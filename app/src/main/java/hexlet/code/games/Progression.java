@@ -9,11 +9,11 @@ public class Progression {
     public static final int TOP_RANGE_STEP = 4; //Для задания шага прогрессии
     public static final int COUNT_STEP = 3; //Количество раундов в игре
 
-    public static String progressionRules() {
+    public static String progressionRulesShow() {
         return "What number is missing in the progression?";
     }
 
-    public static String[][] progression() {
+    public static String[][] defineProgression() {
         final int strCount = 3;
         String[][] arrays = new String[strCount][2];
         int j; //Счетчик для количества итераций в игре
