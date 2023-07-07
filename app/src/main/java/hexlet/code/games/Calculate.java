@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 public class Calculate {
     public static final int TOP_RANGE_LIMIT = 20;
+
     public static final int ALL_OPERATION = 3; //Для опередления количества операций
     public static final int LOW_RANGE_LIMIT = 1;
     public static final int ALL_STEP = 3;
@@ -42,10 +43,9 @@ public class Calculate {
         final int strCount = 3;
         final int columnCount = 4;
         int result;
-        int i; //Строка
         int j = 0; //Столбец
         String[][] arrays = new String[strCount][columnCount];
-        for (i = 0; i < ALL_STEP; i++) {
+        for (int i = 0; i < ALL_STEP; i++) {
             int num1 = generateNum();
             int num2 = generateNum();
             String operation = generateOperation();
