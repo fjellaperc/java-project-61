@@ -1,5 +1,7 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 public class GCD {
     public static final int TOP_RANGE_LIMIT = 5;
     public static final int LOW_RANGE_LIMIT = 1;
@@ -19,29 +21,20 @@ public class GCD {
         }
         return secondNumber + firstNumber;
     }
-
-    public static String gcdRulesShow() {
-        return "Find the greatest common divisor of given numbers.";
-    }
-
-    public static String[][] gcdFound() {
+    public static void runGameGcd() {
+        String rules = "Find the greatest common divisor of given numbers.";
         int firstNOD;
-        final int strCount = 3;
-        final int columnCount = 3;
         int j = 0; //Столбец
-        String[][] arrays = new String[strCount][columnCount];
-        int i;
-        for (i = 0; i < COUNT_STEP; i++) {
+        String[][] resultArray = new String[COUNT_STEP][2];
+        for (int i = 0; i < COUNT_STEP; i++) {
             int num1 = generateNum();
             int num2 = generateNum();
             firstNOD = findGcd(num1, num2);
-            arrays[i][j] = Integer.toString(num1);
+            resultArray[i][j] = num1 + " " + num2;
             j++;
-            arrays[i][j] = Integer.toString(num2);
-            j++;
-            arrays[i][j] = Integer.toString(firstNOD);
+            resultArray[i][j] = Integer.toString(firstNOD);
             j = 0;
         }
-        return arrays;
+        Engine.run(rules, resultArray);
     }
 }

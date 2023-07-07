@@ -1,12 +1,11 @@
 package hexlet.code;
-import hexlet.code.games.Calculate;
-import hexlet.code.games.Even;
+
+import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Calculate;
 import hexlet.code.games.Welcome;
-import hexlet.code.games.GCD;
-
-import java.util.InputMismatchException;
+import hexlet.code.games.Even;
 import java.util.Scanner;
 
 public class App {
@@ -19,31 +18,31 @@ public class App {
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
-        final int greet = 1;
-        final int evenGame = 2;
-        final int calcGame = 3;
-        final int gcdGame = 4;
-        final int progressGame = 5;
-        final int primeGame = 6;
         Scanner scanner = new Scanner(System.in);
-        try {
-            int userInt = scanner.nextInt();
-            System.out.println("Your choice: " + userInt);
-            if (userInt == greet) {
+        String userChoice = scanner.next();
+        System.out.println("Your choice: " + userChoice);
+        switch (userChoice) {
+            case "1":
                 Welcome.sayHello();
-            } else if (userInt == evenGame) {
-                Comparison.comparisonEven(Even.evenRulesShow(), Even.evenDefine());
-            } else if (userInt == calcGame) {
-                Comparison.comparisonCalc(Calculate.ruleCalcShow(), Calculate.calculation());
-            } else if (userInt == gcdGame) {
-                Comparison.comparisonGcd(GCD.gcdRulesShow(), GCD.gcdFound());
-            } else if (userInt == progressGame) {
-                Comparison.comparisonProgression(Progression.progressionRulesShow(), Progression.defineProgression());
-            } else if (userInt == primeGame) {
-                Comparison.comparisonPrime(Prime.primeRulesShow(), Prime.primeDefine());
-            }
-        } catch (InputMismatchException e) {
-            System.out.println("Please, enter correct option!!!");
+                break;
+            case "2":
+                Even.runEvenGame();
+                break;
+            case "3":
+                Calculate.runGameCalculation();
+                break;
+            case "4":
+                GCD.runGameGcd();
+                break;
+            case "5":
+                Progression.runProgressionGame();
+                break;
+            case "6":
+                Prime.runPrimeGame();
+                break;
+            default:
+                System.out.println("Please, enter correct option!!!");
+                break;
         }
     }
 }

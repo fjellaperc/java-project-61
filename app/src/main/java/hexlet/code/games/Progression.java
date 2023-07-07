@@ -1,6 +1,6 @@
 package hexlet.code.games;
 
-import java.util.Arrays;
+import hexlet.code.Engine;
 
 public class Progression {
     public static final int TOP_RANGE_LIMIT = 5;  //Для задания мдлины массива
@@ -9,15 +9,10 @@ public class Progression {
     public static final int TOP_RANGE_STEP = 4; //Для задания шага прогрессии
     public static final int COUNT_STEP = 3; //Количество раундов в игре
 
-    public static String progressionRulesShow() {
-        return "What number is missing in the progression?";
-    }
-
-    public static String[][] defineProgression() {
-        final int strCount = 3;
-        String[][] arrays = new String[strCount][2];
-        int j; //Счетчик для количества итераций в игре
-        for (j = 0; j < COUNT_STEP; j++) {
+    public static void runProgressionGame() {
+        String rules = "What number is missing in the progression?";
+        String[][] resultArray = new String[COUNT_STEP][2];
+        for (int j = 0; j < COUNT_STEP; j++) {
             int count = (int) (Math.random() * TOP_RANGE_LIMIT + LOW_RANGE_LIMIT); //Длина массива
             int emptyElement = (int) (Math.random() * (count - 1) + 1); //Позиция скрытого элемента
             String[] numbers = new String[count];
@@ -26,7 +21,7 @@ public class Progression {
             int step = (int) (Math.random() * TOP_RANGE_STEP + 1); //Шаг прогрессии (от 1 до 4)
             numbers[0] = Integer.toString(currentElement);
             compareNumbers[0] = Integer.toString(currentElement);
-            for (int i = 1; i < numbers.length; i++) {  //Формируем массив
+            for (int i = 1; i < numbers.length; i++) {  //Формируем массив прогрессии
                 currentElement = currentElement + step;
                 if (i == emptyElement) {
                     numbers[i] = "..";
@@ -35,13 +30,11 @@ public class Progression {
                 }
                 compareNumbers[i] = Integer.toString(currentElement);
             }
-            String s = Arrays.toString(numbers).replace(",", ""); //Удаляем запятые
-            StringBuilder out = new StringBuilder(s); //массив в стрингбилдер
-            out = out.deleteCharAt(0).deleteCharAt(out.length() - 1); // удаляем скобки []
-            arrays[j][0] = out.toString();
-            arrays[j][1] = compareNumbers[emptyElement];
+            String question = String.join(" ", numbers);
+            resultArray[j][0] = question;
+            resultArray[j][1] = compareNumbers[emptyElement];
         }
-        return arrays;
+        Engine.run(rules, resultArray);
     }
 }
 
