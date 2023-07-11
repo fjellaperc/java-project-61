@@ -1,51 +1,40 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils.Random;
+
 
 public class Calculate {
-    public static final int TOP_RANGE_LIMIT = 20;
-    public static final int ALL_OPERATION = 3; //Для опередления количества операций
+    public static final int COUNT_STEP = 3; //Для опередления количества операций
+    public static final int TOP_RANGE_LIMIT = 101;
     public static final int LOW_RANGE_LIMIT = 1;
-    public static final int COUNT_STEP = 3;
     public static String generateOperation() {
         String[] array = {"+", "-", "*"};
-        int indexArray = (int) (Math.random() * ALL_OPERATION);
+        int indexArray = Random.generateNum(0, COUNT_STEP);
         return array[indexArray];
     }
-    public static int generateNum() {
-        return ((int) (Math.random() * TOP_RANGE_LIMIT + LOW_RANGE_LIMIT));
-    }
     public static int calculating(int firstNum, int secondNum, String operator) {
-        int result = 0;
         switch (operator) {
             case ("+"):
-                result = firstNum + secondNum;
-                break;
+                return firstNum + secondNum;
             case ("-"):
-                result = firstNum - secondNum;
-                break;
+                return firstNum - secondNum;
             case ("*"):
-                result = firstNum * secondNum;
-                break;
+                return firstNum * secondNum;
             default:
-                break;
+                return 1;
         }
-        return result;
     }
     public static void runGameCalculation() {
         String rules = "What is the result of the expression?";
-        int result;
-        int j = 0; //Столбец
         String[][] resultArray = new String[COUNT_STEP][2];
         for (int i = 0; i < COUNT_STEP; i++) {
-            int num1 = generateNum(); //Генерация первого числа
-            int num2 = generateNum(); //Генерация второго числа
+            int num1 = Random.generateNum(LOW_RANGE_LIMIT, TOP_RANGE_LIMIT); //Генерация первого числа
+            int num2 = Random.generateNum(LOW_RANGE_LIMIT, TOP_RANGE_LIMIT); //Генерация второго числа
             String operation = generateOperation(); //Генерация знака операции
-            result = calculating(num1, num2, operation); //Определение ответа
-            resultArray[i][j] = num1 + " " + operation + " " + num2; //Записали вопрос в массив
-            j++; // Сместили указатель столбца
-            resultArray[i][j] = Integer.toString(result);
-            j = 0; //Вернули указатель в исзолное положение
+            int result = calculating(num1, num2, operation); //Определение ответа
+            resultArray[i][0] = num1 + " " + operation + " " + num2; //Записали вопрос в массив
+            resultArray[i][1] = Integer.toString(result);
         }
         Engine.run(rules, resultArray);
     }
