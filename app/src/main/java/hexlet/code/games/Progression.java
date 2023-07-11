@@ -7,8 +7,8 @@ public class Progression {
     public static final int TOP_RANGE_STEP = 5; //Для задания шага прогрессии
     public static final int RANGE_FIRST_NUM = 21; //Верхняя граница для первого числа
     public static final int COUNT_STEP = 3; //Количество раундов в игре
-    public static final int TOP_RANGE_SIZE = 8; //Маскимальная длина массива
-    public static final int LOW_RANGE_SIZE = 4; //Минимальная длина массива
+    public static final int TOP_RANGE_SIZE = 10; //Маскимальная длина массива
+    public static final int LOW_RANGE_SIZE = 6; //Минимальная длина массива
     public static String[] textureProgression() {
         int lengthArray = Random.generateNum(LOW_RANGE_SIZE, TOP_RANGE_SIZE); //Длина массива
         int emptyElement = Random.generateNum(1, lengthArray); //Позиция скрытого элемента(от 1 до 7)
